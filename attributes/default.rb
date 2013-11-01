@@ -25,7 +25,7 @@ default.django.nginx.server_root = default.django.deploy_dir
 default.django.nginx.http_port = 80
 
 # grant django user sudo access
-default['authorization']['sudo']['users'] = ['django']
+default['authorization']['sudo']['users'] = [default.django.username]
 
 # postgresql config
 default['postgresql']['pg_hba'] = [
