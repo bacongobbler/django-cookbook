@@ -12,8 +12,8 @@ default.django.worker_port = 8000
 default.django.num_workers = 4
 
 # where do we find the application?
-default.django.app.git_url = "git://github.com/bacongobbler/django-heroku-example.git"
-default.django.app.git_commit = "4974e8b2615068e3f30bc68074f24ea0669698f0"
+default.django.git.url = "git://github.com/bacongobbler/django-heroku-example.git"
+default.django.git.branch = "master"
 
 # database settings
 default.django.database.name = 'django'

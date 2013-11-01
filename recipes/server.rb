@@ -3,8 +3,8 @@ username = node.django.username
 group = node.django.group
 deploy_dir = node.django.deploy_dir
 log_dir = node.django.log_dir
-git_url = node.django.app.git_url
-commit = node.django.app.git_commit
+git_url = node.django.git.url
+branch = node.django.git.branch
 
 # required packages
 package 'python-virtualenv'
@@ -15,7 +15,7 @@ git deploy_dir do
   user username
   group group
   repository git_url
-  reference commit
+  reference branch
   enable_submodules true
   action :checkout
 end
