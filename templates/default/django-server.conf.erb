@@ -29,5 +29,5 @@ end script
 script
 cd $DJANGO_HOME
 . venv/bin/activate
-exec gunicorn wsgi:application -b $DJANGO_BIND:$DJANGO_PORT -w $DJANGO_WORKERS --access-logfile $DJANGO_LOG_DIR/access.log --error-logfile $DJANGO_LOG_DIR/server.log --log-level <%= @log_level %>
+exec gunicorn wsgi:application --daemon -b $DJANGO_BIND:$DJANGO_PORT -w $DJANGO_WORKERS --access-logfile $DJANGO_LOG_DIR/access.log --error-logfile $DJANGO_LOG_DIR/server.log --log-level <%= @log_level %>
 end script
