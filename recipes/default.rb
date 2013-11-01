@@ -23,6 +23,10 @@ end
 sudo username do
   user username
   nopasswd true
+  commands ['/usr/bin/chef-client',
+            '/sbin/restart django-server',
+            '/sbin/start django-server',
+            '/sbin/stop django-server']
 end
 
 # create a log directory writeable by the user
