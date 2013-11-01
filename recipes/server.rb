@@ -89,12 +89,3 @@ service 'django-server' do
   provider Chef::Provider::Service::Upstart
   action [:enable]
 end
-
-# nginx configuration
-include_recipe 'django::nginx'
-
-nginx_site 'django' do
-  template 'nginx-server.conf.erb'
-  vars :server_root => node.django.nginx.server_root,
-       :http_port => node.django.nginx.http_port
-end

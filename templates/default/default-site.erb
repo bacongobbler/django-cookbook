@@ -4,11 +4,11 @@ upstream api_server {
 }
 
 server {
-    listen <%= @http_port %> default_server;
-    server_name localhost;
+    listen <%= node.django.nginx.http_port %> default_server;
+    server_name <%= node.hostname %>;
 
     location /static {
-        root <%= @server_root %>;
+        root <%= node.django.nginx.server_root %>;
     }
 
     location / {
@@ -31,6 +31,6 @@ server {
 
     error_page 500 502 503 504 /500.html;
     location = /500.html {
-        root <%= @server_root %>/static;
+        root <%= node.django.nginx.server_root %>/static;
     }
 }
